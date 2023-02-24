@@ -1,16 +1,16 @@
-import { HeaderContainer, HeaderContent } from "./styles";
+import { BottomRectangleEffect, HeaderContainer } from "./styles";
 
 import logoImg from "../../assets/logo.svg";
 import effect_left from "../../assets/effect_left.png";
 import effect_right from "../../assets/effect_right.png";
+import bottomEffectImg from '../../assets/bottom_effect.svg'
 export function Header() {
   return (
     <HeaderContainer>
-      <HeaderContent>
-        <img src={effect_left} height="188" width="409" alt="" />
-        <img src={logoImg} height="98" width="148" alt="" />
-        <img src={effect_right} height="236" width="371" alt="" />
-      </HeaderContent>
+        <img src={effect_left} alt="" />
+        <img src={logoImg} className="logo" height="98" width="148" alt="" />
+        <img src={effect_right} alt="" />
+        <BottomRectangleEffect src={bottomEffectImg} alt="" />
     </HeaderContainer>
   );
 }

@@ -1,7 +1,11 @@
+import { redirect } from "react-router-dom";
+
 export const defaultTheme = {
   white: "#fff",
-
   blue: "#3294F8",
+  red: '#FC0909',
+  green: '#23FC09',
+
   "base-title": "#E7EDF4",
   "base-subtitle": "#C4D4E3",
   "base-text": "#AFC2D4",

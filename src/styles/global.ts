@@ -18,8 +18,25 @@ body {
   -webkit-font-smoothing: antiatiased;
 }
 
-body, input, textarea, button {
-  font: 400 1rem Nunito sans-serif;
+body, input, button {
+  font: 400 1rem Nunito, sans-serif;
 }
 
+a[id="link"] {
+  font-size: 0.75rem;
+  line-height: 160%;
+  font-weight: bold;
+  color: ${(props) => props.theme["blue"]};
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 1px solid ${(props) => props.theme["blue"]};
+  }
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+  }
 `;
