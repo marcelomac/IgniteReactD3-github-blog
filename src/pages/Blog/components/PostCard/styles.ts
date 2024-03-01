@@ -16,6 +16,7 @@ export const PostCardContainer = styled.div`
   header {
     display: flex;
     justify-content: space-between;
+    align-items: start;
     
     strong {
       font-size: 1.25rem;
@@ -24,13 +25,14 @@ export const PostCardContainer = styled.div`
 
     span {
       min-width: 3.25rem;
+      padding: 0.25rem;
       font-size: 0.75rem;
       color: ${(props) => props.theme["base-span"]};
-      white-space: nowrap;
+      white-space: pre-wrap;
     }
   }
 
-  p {
+  div {
     max-height: 8rem;
     margin-top: 1rem;
     font-size: 1rem;

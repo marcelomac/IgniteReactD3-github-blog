@@ -40,11 +40,11 @@ export function Profile() {
         <header>
           <strong>{profileData.name}</strong>
 
-          <a href={profileData.html_url} target="_blank" id="link" rel="noreferrer">
-            GITHUB
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-          </a>
-        </header>
+            <a href={profileData.html_url} target="_blank" id="link" rel="noreferrer">
+              GITHUB
+              {/* <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> */}
+            </a>
+          </header>
 
         <p>{profileData.bio}</p>
 

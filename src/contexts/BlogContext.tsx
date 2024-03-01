@@ -3,6 +3,7 @@ import { api } from "../lib/axios";
 
 interface IssuesTypeResponse {
   id: number;
+  url: string;
   number: number;
   title: string;
   created_at: string;
@@ -34,6 +35,7 @@ export function BlogProvider({ children }: BlogProviderProps) {
     const issuesData = response.data.items.map((issue: IssuesTypeResponse) => {
       return {
         id: issue.id,
+        url: issue.url,
         number: issue.number,
         title: issue.title,
         created_at: new Date(issue.created_at),

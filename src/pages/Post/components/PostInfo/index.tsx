@@ -58,7 +58,7 @@ export function PostInfo({ data }: PostInfoProps) {
         <InfoDetail icon={faComment} info={commentsAmount} />
       </footer>
 
-      <p>{body}</p>
+      {body}
     </PostInfoContainer>
   );
 }

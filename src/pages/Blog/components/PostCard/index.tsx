@@ -6,6 +6,7 @@ import { PostCardContainer } from "./styles";
 
 interface PostType {
   id: number;
+  url: string;
   number: number;
   title: string;
   created_at: string;
@@ -17,12 +18,35 @@ interface PostProps {
 }
 
 export function PostCard({ post }: PostProps) {
-  const relativeDate = formatDistanceToNow(new Date(post.created_at), { locale: ptBR, addSuffix: true });
+  const relativeDate = formatDistanceToNow(new Date(post.created_at), {
+    locale: ptBR,
+    addSuffix: true,
+  });
 
-  const body = <ReactMarkdown includeElementIndex>{post.body}</ReactMarkdown>;
+  
+  const body = (
+    <ReactMarkdown
+      components={{
+       // a: 'em',
+        a(props) {
+          const {node, ...rest} = props
+          return <i style={{textUnderlinePosition:"under"}} {...rest} />
+        }
+      }}
+    >
+      {post.body}
+    </ReactMarkdown>
+  );
 
   return (
-    <NavLink to={`/post/${post.number}`} title={post.title}>
+    /**
+     * Navegação para a rota do post
+     * <Route path="/post/:postNumber" element={<Post />} />
+     * 
+     *     <NavLink to={`/post/${post.number}`} title={post.title}>
+     */
+
+    <NavLink to={`/post/${post.number}`}>
       <PostCardContainer>
         <header>
           <strong>{post.title}</strong>
@@ -30,7 +54,7 @@ export function PostCard({ post }: PostProps) {
             <time>{relativeDate}</time>
           </span>
         </header>
-        <p>{body}</p>
+        <div>{body}</div>
       </PostCardContainer>
     </NavLink>
   );
